@@ -101,6 +101,13 @@ def update_user():
 # Function to delete a user
 def delete_user():
     user_id = input("Enter User ID to delete: ")
+    #Check if the user exists or not
+    cursor.execute("SELECT user_id FROM users WHERE user_id = %s", (user_id,))
+    user = cursor.fetchone()
+    if not user:
+        print("User ID not found.")
+        return
+    
     confirm = input(f"Are you sure you want to delete user {user_id}? (y/n): ")
     if confirm.lower() == 'y':
         cursor.execute("DELETE FROM users WHERE user_id = %s", (user_id,))
@@ -179,6 +186,15 @@ def update_book():
 # Function to delete a book
 def delete_book():
     book_id = input("Enter Book ID to delete: ")
+
+    #check if book exists
+    query = "SELECT book_id FROM books WHERE book_id = %s"
+    cursor.execute(query, (book_id,))
+    book = cursor.fetchone()
+    if not book:
+        print("Book ID not found.")
+        return
+    
     confirm = input(f"Are you sure you want to delete book {book_id}? (y/n): ")
     if confirm.lower() == 'y':
         cursor.execute("DELETE FROM books WHERE book_id = %s", (book_id,))
