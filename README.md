@@ -105,7 +105,6 @@ Potential future enhancements include:
 ```text
 
 Library-Management-System/
-
 │
 ├── README.md
 ├── library.py
@@ -114,7 +113,6 @@ Library-Management-System/
 ├── screenshots
 
 ```
-
 \---
 
 
