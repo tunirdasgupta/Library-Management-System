@@ -82,8 +82,6 @@ Through this project, I gained practical experience in:
 - Software architecture
 - User authentication and authorization
 - Secure coding practices
-
-More importantly, the project helped me understand that technology is not only about writing code but also about understanding people, workflows, and information management.
 ---
 
 
@@ -102,8 +100,6 @@ Potential future enhancements include:
 
 ## Repository Contents
 
-```text
-
 Library-Management-System/
 │
 ├── README.md
@@ -115,7 +111,6 @@ Library-Management-System/
 
 ## Author
 
-Tunir Dasgupta
+**Tunir Dasgupta**
 
 Python | MySQL | Database Design | Software Development
-
