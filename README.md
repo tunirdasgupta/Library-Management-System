@@ -118,7 +118,7 @@ Library-Management-System/
 
 \## Author
 
-\*\*Tunir Dasgupta\*\
+*\*Tunir Dasgupta\*\
 
 Python | MySQL | Database Design | Software Development
 
