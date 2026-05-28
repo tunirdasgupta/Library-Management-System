@@ -1,3 +1,4 @@
+import getpass
 import mysql.connector
 from mysql.connector import Error
 from datetime import datetime
@@ -22,7 +23,8 @@ except Error as e:
 def admin_login():
     print("Enter admin credentials:")
     username = input("Username: ")
-    password = input("Password: ")
+    #password = input("Password: ")
+    password = getpass.getpass("Password: ")
     query = "SELECT * FROM admin WHERE username = %s AND password = %s"
     cursor.execute(query, (username, password))
     result = cursor.fetchone()
@@ -37,7 +39,8 @@ def admin_login():
 def user_login():
     print("Enter user credentials:")
     user_id = input("User ID: ")
-    password = input("Password: ")
+    #password = input("Password: ")
+    password = getpass.getpass("Password: ")
     query = "SELECT * FROM users WHERE user_id = %s AND password = %s"
     cursor.execute(query, (user_id, password))
     result = cursor.fetchone()
@@ -133,25 +136,31 @@ def search_user():
 # Function to add a new book
 def add_book():
     print("\nAdd New Book")
-    title = input("Title: ")
-    if not validate_title(title):
-        return
-    
-    author = input("Author: ")
-    if not validate_author(author):
-        return
 
-    publisher = input("Publisher: ")
-    if not validate_publisher(publisher):
-        return
+    while True:
+        title = input("Title: ")
+        if validate_title(title):
+            break
 
-    year = input("Publication Year: ")
-    if not validate_year(year):
-        return
+    while True:
+        author = input("Author: ")
+        if  validate_author(author):
+            break
 
-    copies = input("Number of copies: ")
-    if not validate_copies(copies):
-        return
+    while True:
+        publisher = input("Publisher: ")
+        if validate_publisher(publisher):
+            break
+
+    while True:
+        year = input("Publication Year: ")
+        if  validate_year(year):
+            break
+
+    while True:
+        copies = input("Number of copies: ")
+        if  validate_copies(copies):
+            break
 
     
     query = "INSERT INTO books (title, author, publisher, year, copies) VALUES (%s, %s, %s, %s, %s)"
@@ -235,21 +244,46 @@ def display_books():
 def update_book():
     book_id = input("Enter Book ID to update: ")
     print("Enter new data (leave blank to keep unchanged):")
-    new_title = input("New Title: ")
-    if new_title:
-        validate_title(new_title)
-    new_author = input("New Author: ")
-    if new_author:
-        validate_author(new_author)
-    new_publisher = input("New Publisher: ")
-    if new_publisher:
-        validate_publisher(new_publisher)
-    new_year = input("New Year: ")
-    if new_year:
-        validate_year(new_year)
-    new_copies = input("New Copies: ")
-    if new_copies:
-        validate_copies(new_copies)
+
+    while True:
+        new_title = input("New Title: ")
+        if new_title:
+            if validate_title(new_title):
+                break
+        else:
+            break
+
+    while True:    
+        new_author = input("New Author: ")
+        if new_author:
+            if validate_author(new_author):
+                break
+        else:
+            break
+
+    while True:    
+        new_publisher = input("New Publisher: ")
+        if new_publisher:
+            if validate_publisher(new_publisher):
+                break
+        else:
+            break
+        
+    while True:
+        new_year = input("New Year: ")
+        if new_year:
+            if validate_year(new_year):
+                break
+        else:
+            break
+
+    while True:
+        new_copies = input("New Copies: ")
+        if new_copies:
+            if validate_copies(new_copies):
+                brreak
+        else:
+            break
 
     
     query = "SELECT title, author, publisher, year, copies FROM books WHERE book_id = %s"
