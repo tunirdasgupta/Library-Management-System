@@ -70,7 +70,107 @@ The project incorporates several security and validation measures:
 - Role-based access control for administrators and members
 - Authentication-based access to application features
 ---
+# ⚙️ Setup Instructions
 
+Follow these steps to set up and run the project on your system.
+
+---
+
+## 1. Clone the Repository
+
+Open Terminal / Command Prompt and run:
+
+```bash
+git clone https://github.com/tunirdasgupta/Library-Management-System.git
+cd Library-Management-System
+```
+
+---
+
+## 2. Install Python Dependencies
+
+Install the required MySQL connector package:
+
+```bash
+pip install mysql-connector-python
+```
+
+---
+
+## 3. Install and Start MySQL
+
+Make sure MySQL Server is installed and running on your system.
+
+You can download MySQL from:
+
+https://dev.mysql.com/downloads/mysql/
+
+---
+
+## 4. Create the Database
+
+Open MySQL Command Line Client or MySQL Workbench and run:
+
+```sql
+CREATE DATABASE library_db;
+USE library_db;
+```
+
+Then execute the SQL schema file:
+
+```sql
+SOURCE database_schema.sql;
+```
+
+Alternatively, you can manually copy and execute the contents of `database_schema.sql`.
+
+---
+
+## 5. Configure Database Credentials
+
+Open `library.py` and update the MySQL connection details:
+
+```python
+connection = mysql.connector.connect(
+    host="localhost",
+    user="your_username",
+    password="your_password",
+    database="library_db"
+)
+```
+
+Replace:
+
+* `your_username` with your MySQL username
+* `your_password` with your MySQL password
+
+---
+
+## 6. Run the Application
+
+Run the Python program using:
+
+```bash
+python library.py
+```
+
+---
+
+# ✅ Requirements
+
+* Python 3.x
+* MySQL Server
+* mysql-connector-python package
+
+---
+
+# 📌 Notes
+
+* Ensure MySQL Server is running before starting the application.
+* The database schema must be imported successfully before running the program.
+* This is a console-based application and runs entirely in the terminal.
+
+---
 ## Setup Instructions
 
 1. Clone the Repository
