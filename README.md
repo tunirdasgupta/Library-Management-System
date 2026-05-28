@@ -61,7 +61,7 @@ The system uses a relational database consisting of the following entities:
 ---
 
 
-\## Security Features
+## Security Features
 
 The project incorporates several security and validation measures:
 
@@ -84,7 +84,7 @@ Through this project, I gained practical experience in:
 - Secure coding practices
 
 More importantly, the project helped me understand that technology is not only about writing code but also about understanding people, workflows, and information management.
-\---
+---
 
 
 ## Future Improvements
@@ -111,13 +111,11 @@ Library-Management-System/
 ├── library.sql
 ├── Project Overview.pdf
 ├── screenshots
-
-\---
-
+---
 
 ## Author
 
-\*Tunir Dasgupta\*
+Tunir Dasgupta
 
 Python | MySQL | Database Design | Software Development
 
