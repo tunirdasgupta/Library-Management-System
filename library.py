@@ -281,7 +281,7 @@ def update_book():
         new_copies = input("New Copies: ")
         if new_copies:
             if validate_copies(new_copies):
-                brreak
+                break
         else:
             break
 
