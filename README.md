@@ -156,7 +156,7 @@ Then execute the SQL schema file:
 SOURCE LIBRARY.sql;
 ```
 
-Alternatively, you can manually copy and execute the contents of `database_schema.sql`.
+Alternatively, you can manually copy and execute the contents of `LIBRARY.sql`.
 
 ---
 
