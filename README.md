@@ -85,12 +85,12 @@ SOURCE LIBRARY.sql;
 
 4. Configure Database Credentials
 
-Update the MySQL connection details in library.py:
+- Update the MySQL connection details in library.py:
 
-host="localhost"
-user="your_username"
-password="your_password"
-database="library_db"
+- host="localhost"
+- user="your_username"
+- password="your_password"
+- database="library_db"
 
 5. Run the Program
 python library.py
