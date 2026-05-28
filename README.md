@@ -70,6 +70,40 @@ The project incorporates several security and validation measures:
 - Role-based access control for administrators and members
 - Authentication-based access to application features
 ---
+
+# 📂 Project Structure
+
+```text
+Library-Management-System/
+│
+├── Screenshots/
+│   ├── Screenshots - Admin Functions.pdf
+│   └── Screenshots - User Functions.pdf
+│
+├── .gitattributes
+├── .gitignore
+├── LIBRARY.sql
+├── Project Overview.pdf
+├── README.md
+└── library.py
+```
+
+---
+
+## 📌 File Descriptions
+
+| File / Folder          | Description                                                                   |
+| ---------------------- | ----------------------------------------------------------------------------- |
+| `Screenshots/`         | Contains PDF files with screenshots of administrator and user functionalities |
+| `library.py`           | Main Python application containing the Library Management System logic        |
+| `LIBRARY.sql`          | SQL file containing the database schema and table definitions                 |
+| `Project Overview.pdf` | Project documentation and overview                                            |
+| `README.md`            | Repository documentation and setup guide                                      |
+| `.gitignore`           | Specifies files ignored by Git                                                |
+| `.gitattributes`       | Git configuration attributes file                                             |
+
+---
+
 # ⚙️ Setup Instructions
 
 Follow these steps to set up and run the project on your system.
@@ -196,38 +230,7 @@ Potential future enhancements include:
 - Book recommendation system
 - Analytics dashboard
 ---
-# 📂 Project Structure
 
-```text
-Library-Management-System/
-│
-├── Screenshots/
-│   ├── Screenshots - Admin Functions.pdf
-│   └── Screenshots - User Functions.pdf
-│
-├── .gitattributes
-├── .gitignore
-├── LIBRARY.sql
-├── Project Overview.pdf
-├── README.md
-└── library.py
-```
-
----
-
-## 📌 File Descriptions
-
-| File / Folder          | Description                                                                   |
-| ---------------------- | ----------------------------------------------------------------------------- |
-| `Screenshots/`         | Contains PDF files with screenshots of administrator and user functionalities |
-| `library.py`           | Main Python application containing the Library Management System logic        |
-| `LIBRARY.sql`          | SQL file containing the database schema and table definitions                 |
-| `Project Overview.pdf` | Project documentation and overview                                            |
-| `README.md`            | Repository documentation and setup guide                                      |
-| `.gitignore`           | Specifies files ignored by Git                                                |
-| `.gitattributes`       | Git configuration attributes file                                             |
-
----
 
 ## Author
 
