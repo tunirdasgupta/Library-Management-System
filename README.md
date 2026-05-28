@@ -229,19 +229,6 @@ Library-Management-System/
 
 ---
 
-## Repository Contents
-
-```text
-Library-Management-System/
-│
-├── README.md
-├── library.py
-├── library.sql
-├── Project Overview.pdf
-├── screenshots
-```
----
-
 ## Author
 
 **Tunir Dasgupta**
