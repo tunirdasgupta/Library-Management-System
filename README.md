@@ -119,7 +119,7 @@ USE library_db;
 Then execute the SQL schema file:
 
 ```sql
-SOURCE database_schema.sql;
+SOURCE LIBRARY.sql;
 ```
 
 Alternatively, you can manually copy and execute the contents of `database_schema.sql`.
@@ -171,31 +171,6 @@ python library.py
 * This is a console-based application and runs entirely in the terminal.
 
 ---
-## Setup Instructions
-
-1. Clone the Repository
-git clone https://github.com/tunirdasgupta/Library-Management-System.git
-
-2. Install Dependencies
-pip install mysql-connector-python
-
-3. Create the Database
-Open MySQL and run:
-SOURCE LIBRARY.sql;
-
-4. Configure Database Credentials
-
-- Update the MySQL connection details in library.py:
-
-- host="localhost"
-- user="your_username"
-- password="your_password"
-- database="library_db"
-
-5. Run the Program
-python library.py
----
-
 
 ## What I Learned
 
