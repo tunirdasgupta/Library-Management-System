@@ -58,7 +58,7 @@ The system uses a relational database consisting of the following entities:
 | Books | Stores book inventory details |
 | Issued | Tracks issued and returned books |
 | Notes | Stores personal reading notes |
-\---
+---
 
 
 \## Security Features
@@ -87,7 +87,7 @@ More importantly, the project helped me understand that technology is not only a
 \---
 
 
-\## Future Improvements
+## Future Improvements
 
 Potential future enhancements include:
 
@@ -100,7 +100,7 @@ Potential future enhancements include:
 ---
 
 
-\## Repository Contents
+## Repository Contents
 
 ```text
 
@@ -112,13 +112,12 @@ Library-Management-System/
 ├── Project Overview.pdf
 ├── screenshots
 
-```
 \---
 
 
-\## Author
+## Author
 
-*\*Tunir Dasgupta\*\
+\*Tunir Dasgupta\*
 
 Python | MySQL | Database Design | Software Development
 
