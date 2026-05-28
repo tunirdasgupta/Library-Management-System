@@ -71,6 +71,31 @@ The project incorporates several security and validation measures:
 - Authentication-based access to application features
 ---
 
+## Setup Instructions
+
+1. Clone the Repository
+git clone https://github.com/tunirdasgupta/Library-Management-System.git
+
+2. Install Dependencies
+pip install mysql-connector-python
+
+3. Create the Database
+Open MySQL and run:
+SOURCE LIBRARY.sql;
+
+4. Configure Database Credentials
+
+Update the MySQL connection details in library.py:
+
+host="localhost"
+user="your_username"
+password="your_password"
+database="library_db"
+
+5. Run the Program
+python library.py
+---
+
 
 ## What I Learned
 
