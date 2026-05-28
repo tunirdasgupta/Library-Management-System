@@ -100,6 +100,7 @@ Potential future enhancements include:
 
 ## Repository Contents
 
+```text
 Library-Management-System/
 │
 ├── README.md
@@ -107,6 +108,7 @@ Library-Management-System/
 ├── library.sql
 ├── Project Overview.pdf
 ├── screenshots
+```
 ---
 
 ## Author
