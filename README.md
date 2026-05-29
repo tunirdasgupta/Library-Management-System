@@ -104,7 +104,7 @@ Library-Management-System/
 
 ---
 
-# ⚙️ Setup Instructions
+# Setup Instructions
 
 Follow these steps to set up and run the project on your system.
 
@@ -190,7 +190,7 @@ python library.py
 
 ---
 
-# ✅ Requirements
+# Requirements
 
 * Python 3.x
 * MySQL Server
@@ -198,7 +198,7 @@ python library.py
 
 ---
 
-# 📌 Notes
+# Notes
 
 * Ensure MySQL Server is running before starting the application.
 * The database schema must be imported successfully before running the program.
@@ -231,6 +231,12 @@ Potential future enhancements include:
 - Analytics dashboard
 ---
 
+## Acknowledgements
+
+- I received guidance and encouragement from my Computer Science tutor (Mr. Sudipta Naskar, Assistant teacher of Computer Science at St. Augustine's Day School, Kolkata, email: contact.snaskar@gmail.com) during the design and development of the application.
+- My computer science tutor helped me publish the project repository on GitHub and prepare associated documents such as Project Overview, Screenshots, Readme etc.
+- I used LLMs such as ChatGPT and Google Gemini to help with learning and debugging during development. These AI tools helped me fix errors and implement features such as protected password entry, validation of fields (emails, phone number, year etc). I also referenced ChatGPT to help me draft the Readme.md documentation and plan the GitHub project structure.
+---
 
 ## Author
 
