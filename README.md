@@ -225,10 +225,9 @@ Potential future enhancements include:
 
 - Graphical User Interface (GUI)
 - Password encryption
-- Format validation (Email, telephone, Year, etc)
 - Email notifications
 - Book recommendation system
-- Analytics dashboard
+- Reporting dashboard
 ---
 
 ## Acknowledgements
