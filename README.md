@@ -65,10 +65,10 @@ The system uses a relational database consisting of the following entities:
 
 The project incorporates several security and validation measures:
 
-- Parameterized SQL queries to reduce the risk of SQL injection attacks
-- Input validation for user data
 - Role-based access control for administrators and members
 - Authentication-based access to application features
+- Parameterized SQL queries to reduce the risk of SQL injection attacks
+- Input validation for user data
 ---
 
 # Project Structure
