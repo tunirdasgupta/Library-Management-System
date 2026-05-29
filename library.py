@@ -129,15 +129,15 @@ def validate_email(email):
 def validate_phone(phone):
     #Function to check if phone is empty
     if not phone:
-        print("Phone cannot be empty")
+        print("Phone number cannot be empty")
         return False
     #Function to check if phone is numeric
     if not phone.isdigit():
-        print("Phone should consist of digits")
+        print("Phonenumber should consist of digits")
         return False
     #Function to check if length of phone is 10
     if len(str(phone)) != 10:
-        print("10 numbers must be present")
+        print("Phone Number should be 10 digits long")
         return False
     return True
 
@@ -149,7 +149,7 @@ def validate_name(name):
         return False
     #Function to check length
     if len(name) > 50:
-        print("Name has to be within 50 characters")
+        print("Name should not exceed 50 characters")
         return False
     return True
 
@@ -160,7 +160,7 @@ def validate_password(password):
         print("Password cannot be empty")
         return False
     if len(password) > 50:
-        print("Password must be within 50 characters")
+        print("Password should not exceed 50 characters")
         return False
     return True
 
