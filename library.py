@@ -20,11 +20,25 @@ except Error as e:
     exit()
 
 # Admin login function
+
 def admin_login():
     print("Enter admin credentials:")
-    username = input("Username: ")
-    #password = input("Password: ")
-    password = getpass.getpass("Password: ")
+
+    while True:
+        username = input("Username: ")
+        if not username:
+            print ("Username cannot be blank")
+        else:
+            break
+
+    while True:   
+        #password = input("Password: ")
+        password = getpass.getpass("Password: ")
+        if not password:
+            print ("Password cannot be blank")
+        else:
+            break
+        
     query = "SELECT * FROM admin WHERE username = %s AND password = %s"
     cursor.execute(query, (username, password))
     result = cursor.fetchone()
@@ -38,9 +52,22 @@ def admin_login():
 # User login function
 def user_login():
     print("Enter user credentials:")
-    user_id = input("User ID: ")
-    #password = input("Password: ")
-    password = getpass.getpass("Password: ")
+
+    while True:
+        user_id = input("User ID: ")
+        if not user_id:
+            print ("Username cannot be blank")
+        else:
+            break
+
+    while True:   
+        #password = input("Password: ")
+        password = getpass.getpass("Password: ")
+        if not password:
+            print ("Password cannot be blank")
+        else:
+            break
+    
     query = "SELECT * FROM users WHERE user_id = %s AND password = %s"
     cursor.execute(query, (user_id, password))
     result = cursor.fetchone()
@@ -54,15 +81,88 @@ def user_login():
 # Function to add a new user
 def add_user():
     print("\nAdd New User")
-    name = input("Enter Name: ")
-    email = input("Enter Email: ")
-    phone = input("Enter Phone: ")
-    password = input("Enter Password: ")
+    while True:
+        name = input("Enter name : ")
+        if validate_name(name):
+            break
+    
+    while True:
+        email = input("Enter email: ")
+        if validate_email(email):
+            break
+    while True:
+        phone = input("Enter phone :")
+        if validate_phone(phone):
+            break
+    while True:
+        password = getpass.getpass("Enter password : ")
+        if validate_password(password):
+            break     
+
     query = "INSERT INTO users (name, email, phone, password) VALUES (%s, %s, %s, %s)"
     values = (name, email, phone, password)
     cursor.execute(query, values)
     connection.commit()
     print("User added successfully with ID", cursor.lastrowid)
+
+#Validation functions for adding and updating user attributes
+#Function to validate email
+def validate_email(email):
+    #checks if email is empty
+    if not email:
+        print("Email cannot be empty")
+        return False
+    #checks if email contains @
+    if "@" not in email:
+        print("Email missing @")
+        return False
+    #checks if email contains .
+    if "." not in email:
+        print("Email missing .")
+        return False
+    if len(email) > 50:
+        print("Email is too long")
+        return False
+    return True
+
+#Function to validate phone number
+def validate_phone(phone):
+    #Function to check if phone is empty
+    if not phone:
+        print("Phone cannot be empty")
+        return False
+    #Function to check if phone is numeric
+    if not phone.isdigit():
+        print("Phone should consist of digits")
+        return False
+    #Function to check if length of phone is 10
+    if len(str(phone)) != 10:
+        print("10 numbers must be present")
+        return False
+    return True
+
+#Function to validate name
+def validate_name(name):
+    #Function to check if name is empty
+    if not name:
+        print("Name cannot be empty")
+        return False
+    #Function to check length
+    if len(name) > 50:
+        print("Name has to be within 50 characters")
+        return False
+    return True
+
+#Function to validate password
+def validate_password(password):
+    #Function to check is password is empty
+    if not password:
+        print("Password cannot be empty")
+        return False
+    if len(password) > 50:
+        print("Password must be within 50 characters")
+        return False
+    return True
 
 # Function to display all users
 def display_users():
@@ -79,27 +179,71 @@ def display_users():
 def update_user():
     user_id = input("Enter User ID to update: ")
     print("Enter new data (leave blank to keep unchanged):")
-    new_name = input("New Name: ")
-    new_email = input("New Email: ")
-    new_phone = input("New Phone: ")
-    new_password = input("New Password: ")
-
+    while True:
+        new_name = input("Enter new name :")
+        if not new_name:
+            break
+        else:
+            if validate_name(new_name):
+                break
+    while True:
+        new_email = input("Enter new email: ")
+        if not new_email:
+            break
+        else:
+            if validate_email(new_email):
+                break
+    while True:
+        new_phone = input("Enter new phone :")
+        if not new_phone:
+            break
+        else:
+            if validate_phone(new_phone):
+                break
+    while True:
+        #new_password = input("Enter new password : ")
+        new_password = getpass.getpass("Enter new password : ")
+        if not new_password:
+            break
+        else:
+            if validate_password(new_password):
+                break 
+    if not new_name:
+        if not new_email:
+            if not new_phone:
+                if not new_password:
+                    print("No user details changed. User not updated")
+                    return
+                
     query = "SELECT name, email, phone, password FROM users WHERE user_id = %s"
     cursor.execute(query, (user_id,))
     user = cursor.fetchone()
     if not user:
         print("User ID not found.")
         return
+    if new_name:
+        name_val = new_name
+    else:
+        name_val = user[0]
+    if new_email:
+        email_val = new_email
+    else:
+        email_val = user[1]
+    if new_phone:
+         phone_val = new_phone
+    else:
+         phone_val = user[2]
+    if new_password:
+        password_val = new_password
+    else:
+        password_val = user[3]
 
-    name_val = new_name if new_name else user[0]
-    email_val = new_email if new_email else user[1]
-    phone_val = new_phone if new_phone else user[2]
-    password_val = new_password if new_password else user[3]
 
     update_query = "UPDATE users SET name=%s, email=%s, phone=%s, password=%s WHERE user_id=%s"
     cursor.execute(update_query, (name_val, email_val, phone_val, password_val, user_id))
     connection.commit()
     print("User updated successfully.")
+
 
 # Function to delete a user
 def delete_user():
@@ -285,6 +429,14 @@ def update_book():
         else:
             break
 
+    if not new_title:
+        if not new_author:
+            if not new_publisher:
+                if not new_year:
+                    if not new_copies:
+                        print ("No book details changed. Book not updated")
+                        return
+        
     
     query = "SELECT title, author, publisher, year, copies FROM books WHERE book_id = %s"
     cursor.execute(query, (book_id,))
@@ -412,12 +564,27 @@ def return_book(user_id):
 
 # Function to add a note for a user
 def add_note(user_id):
-    content = input("Enter note content: ")
+    while True:
+        content = input("Enter content : ")
+        if validate_content(content):
+            break
+
     note_date = datetime.now().strftime('%Y-%m-%d')
     query = "INSERT INTO notes (user_id, content, note_date) VALUES (%s, %s, %s)"
     cursor.execute(query, (user_id, content, note_date))
     connection.commit()
     print("Note added successfully with ID", cursor.lastrowid)
+
+#Function to validate content:
+def validate_content(content):
+    #function to check if content is empty
+    if not content:
+        print("Content cannot be empty")
+        return False
+    if len(content) > 50:
+        print("Content has to be within 50 characters")
+        return False
+    return True
 
 # Function to display notes for a user
 def display_notes(user_id):
@@ -439,7 +606,12 @@ def update_note(user_id):
         print("Note ID not found or does not belong to you.")
         return
     print("Current content:", record[0])
-    new_content = input("Enter new content: ")
+    
+    while True:
+        new_content = input("Enter new content : ")
+        if validate_content(new_content):
+            break
+
     update_query = "UPDATE notes SET content = %s WHERE note_id = %s"
     cursor.execute(update_query, (new_content, note_id))
     connection.commit()
