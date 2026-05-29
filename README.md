@@ -71,7 +71,7 @@ The project incorporates several security and validation measures:
 - Authentication-based access to application features
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```text
 Library-Management-System/
@@ -90,7 +90,7 @@ Library-Management-System/
 
 ---
 
-## 📌 File Descriptions
+## File Descriptions
 
 | File / Folder          | Description                                                                   |
 | ---------------------- | ----------------------------------------------------------------------------- |
