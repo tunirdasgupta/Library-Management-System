@@ -2,17 +2,17 @@
 
 ## Overview
 
-The idea for the project came from Vivekananda Pathagar, a small neighbourhood library that I have visited since childhood. Over the years, I noticed that activities such as cataloguing books, tracking borrowers, and managing inventory were handled manually. This inspired me to explore how software could be used to make these processes more efficient.
+The idea for the project came from Vivekananda Pathagar, a small neighbourhood library that I have visited since childhood. Over the years, I noticed that activities such as cataloguing books, tracking borrowers and managing inventory were handled manually. This inspired me to explore how software could be used to make these processes more efficient.
 
-The application allows administrators to manage books and users, while members can search the catalogue, borrow and return books, and maintain personal reading notes
+The application allows administrators to manage books and users, while members can search the catalogue, borrow and return books and maintain personal reading notes
 
 ---
 
 ## Problem Statement
 
-Many small libraries rely on manual record-keeping systems. While these systems work, they can be time-consuming, difficult to manage, and prone to errors.
+Many small libraries rely on manual record-keeping systems. While these systems work, they can be time-consuming, difficult to manage and prone to errors.
 
-The objective of this project was to design a software solution that could automate common library operations and provide a more organized way of managing books, users, and borrowing records.
+The objective of this project was to design a software solution that could automate common library operations and provide a more organized way of managing books, users and borrowing records.
 
 ---
 
@@ -214,7 +214,7 @@ Through this project, I gained practical experience in:
 - Database design using MySQL
 - SQL query development
 - Software architecture
-- User authentication and authorization
+- User authentication and authorisation
 - Secure coding practices
 ---
 
@@ -232,7 +232,7 @@ Potential future enhancements include:
 
 ## Acknowledgements
 
-- I received guidance and encouragement from my Computer Science tutor (Mr. Sudipta Naskar, Assistant teacher of Computer Science at St. Augustine's Day School, Kolkata, email: contact.snaskar@gmail.com) during the design and development of the application.
+- I received guidance and encouragement from my Computer Science tutor (Mr. Sudipta Naskar, Assistant teacher of Computer Science at St. Augustine's Day School, Kolkata, contact.snaskar@gmail.com) during the design and development of the application.
 - My computer science tutor helped me publish the project repository on GitHub and prepare associated documents such as Project Overview, Screenshots, Readme etc.
 - I used LLMs such as ChatGPT and Google Gemini to help with learning and debugging during development. These AI tools helped me fix errors and implement features such as protected password entry, validation of fields (emails, phone number, year etc). I also referenced ChatGPT to help me draft the Readme.md documentation and plan the GitHub project structure.
 ---
