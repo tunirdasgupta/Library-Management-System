@@ -33,6 +33,7 @@ def admin_login():
 
     while True:   
         #password = input("Password: ")
+        #Protected password entry
         password = getpass.getpass("Password: ")
         if not password:
             print ("Password cannot be blank")
@@ -62,6 +63,7 @@ def user_login():
 
     while True:   
         #password = input("Password: ")
+        #Protected password entry
         password = getpass.getpass("Password: ")
         if not password:
             print ("Password cannot be blank")
@@ -95,6 +97,7 @@ def add_user():
         if validate_phone(phone):
             break
     while True:
+        #Protected password entry
         password = getpass.getpass("Enter password : ")
         if validate_password(password):
             break     
@@ -202,12 +205,15 @@ def update_user():
                 break
     while True:
         #new_password = input("Enter new password : ")
+        #Protected password entry
         new_password = getpass.getpass("Enter new password : ")
         if not new_password:
             break
         else:
             if validate_password(new_password):
-                break 
+                break
+            
+    #Check if any of the user attributes have been changed or not
     if not new_name:
         if not new_email:
             if not new_phone:
@@ -313,6 +319,7 @@ def add_book():
     connection.commit()
     print("Book added successfully with ID", cursor.lastrowid)
 
+#Validation routines to validate the attributes of book
 # Function to validate Book Title
 def validate_title(title):
     if len(title)>50:
@@ -428,7 +435,8 @@ def update_book():
                 break
         else:
             break
-
+        
+    #Check if any of the attributes of the book has been changed or not
     if not new_title:
         if not new_author:
             if not new_publisher:
