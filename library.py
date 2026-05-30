@@ -2,19 +2,29 @@ import getpass
 import mysql.connector
 from mysql.connector import Error
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
 # Establish database connection
 connection = None
 cursor = None
 
 try:
-    connection = mysql.connector.connect(host='localhost',
-                                         user='root',
-                                         password='ryan@2403',
-                                         database='library_db')
+    load_dotenv()
+    #connection = mysql.connector.connect(host='localhost',
+    #                                     user='root',
+    #                                     password='*********',
+    #                                     database='library_db')
+    connection = mysql.connector.connect(
+                                        host=os.getenv("DB_HOST"),
+                                        user=os.getenv("DB_USER"),
+                                        password=os.getenv("DB_PASSWORD"),
+                                        database=os.getenv("DB_NAME")
+                                        )
+
     if connection.is_connected():
         cursor = connection.cursor()
-        # Connection successful
+    # Connection successful
 except Error as e:
     print('Error while connecting to MySQL', e)
     exit()
