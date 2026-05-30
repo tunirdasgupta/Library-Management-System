@@ -1,9 +1,9 @@
+import os
+from dotenv import load_dotenv
 import getpass
 import mysql.connector
 from mysql.connector import Error
 from datetime import datetime
-from dotenv import load_dotenv
-import os
 
 # Establish database connection
 connection = None
